@@ -1,0 +1,3 @@
+###parse("/layout/header.vm")
+$screen_content
+###parse("/layout/footer.vm")
