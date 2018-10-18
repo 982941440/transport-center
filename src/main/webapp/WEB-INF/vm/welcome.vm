@@ -59,6 +59,11 @@
                              <option value="/api/complaint/dada">商家投诉达达 </option>
                              <option value="/api/recharge"> 充值</option>
                              <option value="/api/balance/query">查询余额 </option>
+                             <option value="/api/order/accept">模拟接受订单 </option>
+                             <option value="/api/order/fetch">模拟完成取货 </option>
+                             <option value="/api/order/finish">模拟完成订单 </option>
+                             <option value="/api/order/cancel">模拟取消订单 </option>
+                             <option value="/api/order/expire">模拟订单过期 </option>
                          </select>
                      </div>
 
@@ -139,7 +144,7 @@
             body='';
         }else if(service=="/merchantApi/merchant/add" ){
             body='{"mobile":"15728640840","city_name":"深圳","enterprise_name":"通腾科技有限公司","enterprise_address":"TCL国际E城F3栋","contact_name":"段经传","contact_phone":"15728640840","email":"982941440@qq.com"}';
-        }else if(service=="/api/shop/add" ){//有问题
+        }else if(service=="/api/shop/add" ){
             body='[{"station_name":"新门店1234","origin_shop_id":"shop001234","area_name":"浦东新区","station_address":"地址1","contact_name":"xxx","city_name":"上海","business":1,"lng":121.515014,"phone":"13012345678","lat":31.229081}]';
         }else if(service=="/api/shop/update" ){
             body='{"origin_shop_id":"73753-26342","station_name":"cuteShop"}';
@@ -153,6 +158,16 @@
             body='{"amount":0.1,"category":"H5","notify_url":"www.baidu.com"}';
         }else if(service=="/api/balance/query" ){
             body='{"category":"1"}';
+        }else if(service=="/api/order/accept" ){
+            body='{"order_id":"654151516"}';
+        }else if(service=="/api/order/fetch" ){
+            body='{"order_id":"654151516"}';
+        }else if(service=="/api/order/finish" ){
+            body='{"order_id":"654151516"}';
+        }else if(service=="/api/order/cancel" ){
+            body='{"order_id":"654151516"}';
+        }else if(service=="/api/order/expire" ){
+            body='{"order_id":"654151516"}';
         }
 
         $("#param").val(body);
