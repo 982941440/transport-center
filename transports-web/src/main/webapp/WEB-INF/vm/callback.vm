@@ -1,0 +1,120 @@
+<head>
+    <title>我的桌面</title>
+</head>
+
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<body style="text-align:center">
+<div class="page-container">
+    <p class="f-20 text-success">订单回调测试页面</p>
+
+    <fieldset>
+        <div id="legend" class="">
+            <legend class="">回调调试</legend>
+        </div>
+
+        <div class="control-group">
+
+            <div class="control-group">
+                <label class="control-label">同城快递类型</label>
+
+                <!-- Button -->
+                <div class="controls">
+                    <!-- 标准的按钮 -->
+                    <button type="button" class="btn btn-default">达达同城快递</button>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="control-group">
+
+            <!-- Textarea -->
+            <label class="control-label">请求body</label>
+            <div class="controls">
+                <div class="textarea">
+                             <textarea id="param" style="height:200px;width: 500px">
+                              {"signature":"aaaaaaaaaaaaaaaaaa","client_id":"270340107542552","order_id":"111111111111","order_status":4,"cancel_reason":"","cancel_from":0,"dm_id":1,"dm_name":"测试","dm_mobile":"13100001111","update_time":1511789475}
+                             </textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Button</label>
+
+            <!-- Button -->
+            <div class="controls">
+                <button  class="btn btn-success" type="submit" onclick="confirm()">发送请求</button>
+            </div>
+        </div>
+
+        <div class="control-group">
+
+            <!-- Textarea -->
+            <label class="control-label">响应result</label>
+            <div class="controls">
+                <div class="textarea">
+                             <textarea id="result" style="height:300px;width: 500px">
+
+                             </textarea>
+                </div>
+            </div>
+        </div>
+
+
+    </fieldset>
+
+</div>
+
+<script>
+
+
+
+
+
+    function confirm() {
+
+        var  param= $("#param").val();
+       // var  body=JSON.stringify(param);
+
+        $.ajax({
+            url:"$!{request.contextPath}//callback",
+            type:"post",
+            async:true,
+            dataType:"json",
+           // contentType : "application/json",
+            data:param,
+
+            success:function(data){
+
+                var vendorJson = eval(data);
+
+                $("#result").val(JSON.stringify(vendorJson));
+            },
+            error:function(e){
+                alert("错误！！");
+
+            }
+        });
+
+
+    }
+
+
+</script>
+
+
+</body>
+</html>
