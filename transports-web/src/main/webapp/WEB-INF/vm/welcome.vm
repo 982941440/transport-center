@@ -110,7 +110,7 @@
 </div>
 
 <script>
-   var service="";
+   var service="/api/order/addOrder";
    var body="";
 
 
@@ -121,7 +121,7 @@
         if(service=="/api/order/queryDeliverFee"){
             body='{"shop_no":"11047059","origin_id":"87683534","city_code":"0755","cargo_price":14.00,"is_prepay":"0","receiver_name":"szg","receiver_address":"深圳市宝安区建安一路99号","callback":"www.google.com","receiver_phone":"15712102476"}';
         }else if(service=="/api/order/addOrder" ){
-            body='{"shop_no":"11047059","origin_id":"654151516","city_code":"1432","cargo_price":1.00,"is_prepay":"0","receiver_name":"szg","receiver_address":"sz","receiver_lat":22.563612,"receiver_lng":113.88391,"callback":"www.google.com","receiver_phone":"15712102476"}';
+            body='{"shop_no":"11047059","origin_id":"65415116","city_code":"1432","cargo_price":1.00,"is_prepay":"0","receiver_name":"szg","receiver_address":"sz","receiver_lat":22.563612,"receiver_lng":113.88391,"callback":"www.google.com","receiver_phone":"15712102476"}';
         }else if(service=="/api/order/reAddOrder" ){
             body='{"shop_no":"11047059","origin_id":"654151516","city_code":"1432","cargo_price":12.00,"is_prepay":"0","receiver_name":"szg","receiver_address":"SZ","receiver_lat":22.563612,"receiver_lng":113.88391,"callback":"www.google.com","receiver_phone":"15712102476"}';
         }else if(service=="/api/order/addAfterQuery" ){

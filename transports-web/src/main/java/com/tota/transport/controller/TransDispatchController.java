@@ -3,11 +3,11 @@ package com.tota.transport.controller;
 
 import com.tota.se.common.domain.Result;
 import com.tota.se.common.domain.ResultCode;
+import com.tota.se.common.exception.BusinessException;
 import com.tota.se.common.util.date.DateUtil;
-import com.tota.transport.enums.TransTypeEnum;
-import com.tota.transport.platform.ITransportBaseService;
-import com.tota.transport.platform.dada.model.req.body.Callback;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.tota.transport.common.domain.Callback;
+import com.tota.transport.common.enums.TransTypeEnum;
+import com.tota.transport.common.tools.DadaTransport;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,9 +24,6 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/")
 public class TransDispatchController {
 
-    @Autowired
-    ITransportBaseService dadaTransport;
-
 
     @RequestMapping("/index")
     public String index(HttpServletRequest req) {
@@ -42,13 +39,31 @@ public class TransDispatchController {
 
     @RequestMapping("/transport")
     @ResponseBody
-    public Result transport(HttpServletRequest req) {
+    public String transport(HttpServletRequest req) {
         String transType = req.getParameter("transType");
         String service = req.getParameter("service");
         String body = req.getParameter("body");
         try {
             if (TransTypeEnum.Dada.getKey().equals(transType)) {
-                Object resultObj = dadaTransport.invokeService(service, body);
+                Object resultObj = DadaTransport.invoke(service, body);
+
+                return resultObj.toString();
+            }
+        } catch (Exception e) {
+            throw new BusinessException("请求接口失败！");
+        }
+        return "";
+    }
+
+    @RequestMapping("/transport1")
+    @ResponseBody
+    public Result transport1(HttpServletRequest req) {
+        String transType = req.getParameter("transType");
+        String service = req.getParameter("service");
+        String body = req.getParameter("body");
+        try {
+            if (TransTypeEnum.Dada.getKey().equals(transType)) {
+                Object resultObj = DadaTransport.invoke(service, body);
                 Result result = new Result(ResultCode.COMMON_SUCCESS, true);
                 result.setProperty("resultMap", resultObj);
                 return result;
@@ -58,6 +73,7 @@ public class TransDispatchController {
         }
         return new Result(ResultCode.COMMON_SYSTEM_ERROR, false);
     }
+
 
 
     @RequestMapping(value ="/callback", method = RequestMethod.POST)
