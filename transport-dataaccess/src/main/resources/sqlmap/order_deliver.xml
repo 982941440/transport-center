@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tota.transport.dataaccess.dao.mysql.OrderDeliverMysqlDAO" >
+
+    <resultMap id="OrderDeliverDO" type="com.tota.transport.dataaccess.domain.OrderDeliverDO" >
+        <id column="delivery_id" property="deliveryId"  />
+        <result column="delivery_no" property="deliveryNo" />
+        <result column="shop_id" property="shopId" />
+        <result column="store_id" property="storeId" />
+        <result column="delivery_fee" property="deliveryFee" />
+        <result column="service_fee" property="serviceFee" />
+        <result column="all_fee" property="allFee" />
+    </resultMap>
+
+    <sql id="column_List">
+        delivery_id,delivery_no,shop_id,store_id,delivery_fee,service_fee,all_fee
+    </sql>
+
+    <insert id="save"  >
+        INSERT INTO order_deliver(
+        <include refid="column_List" />
+        )
+        VALUES (#{deliveryId}, #{deliveryNo} ,#{shopId}, #{storeId} ,#{deliveryFee}, #{serviceFee},#{allFee})
+    </insert>
+
+    <select id="findById" resultMap="OrderDeliverDO">
+        SELECT
+        <include refid="column_List" />
+        FROM
+        order_deliver
+        WHERE delivery_id =  #{id}
+    </select>
+
+
+
+
+</mapper>
