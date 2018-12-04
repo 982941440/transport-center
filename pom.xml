@@ -34,7 +34,6 @@
 
 
   <modules>
-    <module>transports-web</module>
     <module>transport-common</module>
     <module>transport-api</module>
     <module>transport-core</module>
