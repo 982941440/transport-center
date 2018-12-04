@@ -7,9 +7,30 @@
 	     http://code.alibabatech.com/schema/dubbo
 	     http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+
     <bean class="com.tota.se.rpc.dubbo.provider.DubboService" id="orderDeliveryRpcService">
         <property name="interfaceName" value="com.tota.transport.rpc.api.service.OrderDeliveryRpcService" />
         <property name="interfaceRef" ref="orderDeliveryRpcServiceImpl" />
+        <property name="protocols" value="${dubbo.protocols}" />
+        <property name="owner" value="duanjc" />
+        <property name="timeout" value="45000" />
+        <property name="retries" value="0" />
+    </bean>
+
+    <bean class="com.tota.se.rpc.dubbo.provider.DubboService" id="deliveryBalanceRpcService">
+        <property name="interfaceName" value="com.tota.transport.rpc.api.service.DeliveryBalanceRpcService" />
+        <property name="interfaceRef" ref="deliveryBalanceRpcServiceImpl" />
+        <property name="protocols" value="${dubbo.protocols}" />
+        <property name="owner" value="duanjc" />
+        <property name="timeout" value="45000" />
+        <property name="retries" value="0" />
+    </bean>
+
+
+
+    <bean class="com.tota.se.rpc.dubbo.provider.DubboService" id="shopDeliveryRpcService">
+        <property name="interfaceName" value="com.tota.transport.rpc.api.service.ShopDeliveryRpcService" />
+        <property name="interfaceRef" ref="shopDeliveryRpcServiceImpl" />
         <property name="protocols" value="${dubbo.protocols}" />
         <property name="owner" value="duanjc" />
         <property name="timeout" value="45000" />

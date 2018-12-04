@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="transport-api" />
+        <module name="transport-common" />
+        <module name="transport-core" />
+        <module name="transport-dataaccess" />
+        <module name="transport-rpc" />
+        <module name="transports-api" />
+        <module name="transports-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="transport-api" target="1.8" />
+      <module name="transport-center" target="1.5" />
+      <module name="transport-common" target="1.8" />
+      <module name="transport-core" target="1.8" />
+      <module name="transport-dataaccess" target="1.8" />
+      <module name="transport-rpc" target="1.8" />
+      <module name="transports-api" target="1.5" />
+      <module name="transports-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

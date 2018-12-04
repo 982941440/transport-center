@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/transport-api/transport-api.iml" filepath="$PROJECT_DIR$/transport-api/transport-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/transport-center.iml" filepath="$PROJECT_DIR$/.idea/transport-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transport-common/transport-common.iml" filepath="$PROJECT_DIR$/transport-common/transport-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transport-core/transport-core.iml" filepath="$PROJECT_DIR$/transport-core/transport-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transport-dataaccess/transport-dataaccess.iml" filepath="$PROJECT_DIR$/transport-dataaccess/transport-dataaccess.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transport-rpc/transport-rpc.iml" filepath="$PROJECT_DIR$/transport-rpc/transport-rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transports-web/transports-web.iml" filepath="$PROJECT_DIR$/transports-web/transports-web.iml" />
+    </modules>
+  </component>
+</project>

@@ -9,7 +9,17 @@ public class QueryDeliverFeeResp implements Serializable{
 
     private  long  deliverFee;
     private  double distance;
+    private  String deliveryNo;
 
+
+
+    public String getDeliveryNo() {
+        return deliveryNo;
+    }
+
+    public void setDeliveryNo(String deliveryNo) {
+        this.deliveryNo = deliveryNo;
+    }
 
     public long getDeliverFee() {
         return deliverFee;

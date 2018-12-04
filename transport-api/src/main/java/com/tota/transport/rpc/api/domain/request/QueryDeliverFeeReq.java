@@ -13,6 +13,7 @@ public class QueryDeliverFeeReq implements Serializable {
 
     private static final long serialVersionUID = -8499837577816451574L;
 
+    private long shopId;
     private long storeId;
     private long deliveryId;
     private String city;
@@ -20,7 +21,39 @@ public class QueryDeliverFeeReq implements Serializable {
     private String name;
     private String address;
     private String phone;
+    private String remark;
 
+    public  QueryDeliverFeeReq(){
+
+    }
+
+    public QueryDeliverFeeReq(long shopId, long storeId, long deliveryId, String city, long actualPayAmount, String name, String address, String phone, String remark) {
+        this.shopId = shopId;
+        this.storeId = storeId;
+        this.deliveryId = deliveryId;
+        this.city = city;
+        this.actualPayAmount = actualPayAmount;
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.remark = remark;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public long getShopId() {
+        return shopId;
+    }
+
+    public void setShopId(long shopId) {
+        this.shopId = shopId;
+    }
 
     public long getStoreId() {
         return storeId;

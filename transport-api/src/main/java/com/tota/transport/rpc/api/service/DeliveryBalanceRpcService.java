@@ -10,7 +10,7 @@ public interface DeliveryBalanceRpcService {
      * @param shopId   门店id
      * @return  ResponseResult   数据结果集
      */
-    ResponseResult balanceRecharge(long shopId);
+    ResponseResult balanceRecharge(long shopId,long amount);
 
 
 

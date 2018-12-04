@@ -2,7 +2,7 @@ package com.tota.transport.rpc.api.domain.response;
 
 import java.io.Serializable;
 
-public class OrderDelivery implements Serializable {
+public class OrderDeliveryResp implements Serializable {
     private static final long serialVersionUID = -701407788480686831L;
 
     private  long  deliveryId;

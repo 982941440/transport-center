@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="transports-web:war">
+    <output-path>$PROJECT_DIR$/transports-web/target</output-path>
+    <root id="archive" name="transports-web.war">
+      <element id="artifact" artifact-name="transports-web:war exploded" />
+    </root>
+  </artifact>
+</component>

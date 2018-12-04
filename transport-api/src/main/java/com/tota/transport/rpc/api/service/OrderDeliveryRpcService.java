@@ -3,7 +3,7 @@ package com.tota.transport.rpc.api.service;
 import com.tota.transport.rpc.api.domain.ResponseResult;
 import com.tota.transport.rpc.api.domain.request.QueryDeliverFeeReq;
 import com.tota.transport.rpc.api.domain.response.OrderCancelResp;
-import com.tota.transport.rpc.api.domain.response.OrderDelivery;
+import com.tota.transport.rpc.api.domain.response.OrderDeliveryResp;
 import com.tota.transport.rpc.api.domain.response.QueryDeliverFeeResp;
 
 public interface OrderDeliveryRpcService {
@@ -28,9 +28,9 @@ public interface OrderDeliveryRpcService {
     /**
      * 订单详情查询
      * @param deliveryId   第三方订单编号
-     * @return   ResponseResult<OrderDelivery>   返回数据结果集
+     * @return   ResponseResult<OrderDeliveryResp>   返回数据结果集
      */
-    ResponseResult<OrderDelivery>  queryOrder(long deliveryId );
+    ResponseResult<OrderDeliveryResp>  queryOrder(long deliveryId );
 
 
 
